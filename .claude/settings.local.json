@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:manual.audacityteam.org)",
+      "WebFetch(domain:plugins.audacityteam.org)"
+    ]
+  }
+}
