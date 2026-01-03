@@ -6,7 +6,7 @@
 ;release 1.0
 ;copyright "Released under MIT license"
 
-;; Normalize each labeled region to -1 dB peak level
+;; Normalize each labeled region independently to -1 dB peak
 ;; Usage: Label your song regions, select all, run from Tools menu
 
 (let ((labels (aud-get-info "labels"))
@@ -27,9 +27,9 @@
               (when (> end start)
                 ;; Select the region
                 (aud-do (format nil "SelectTime: Start=~A End=~A" start end))
-                ;; Normalize to -1 dB
+                ;; Peak normalization to -1 dB
                 (aud-do "Normalize: PeakLevel=-1 ApplyGain=1 RemoveDcOffset=0 StereoIndependent=0")
                 (setf count (1+ count)))))))
 
       ;; Return result message
-      (format nil "Normalized ~A labeled region(s) to -1 dB." count))))
+      (format nil "Normalized ~A labeled region(s) to -1 dB peak." count))))

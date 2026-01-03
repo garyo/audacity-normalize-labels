@@ -21,7 +21,8 @@ Step 3 is tedious—I have to select each labeled region, run Effects > Volume a
    - **Windows**: `%APPDATA%\audacity\Plug-Ins\`
    - **Linux**: `~/.audacity-data/Plug-Ins/`
 3. Restart Audacity
-4. The plugin appears under **Tools > Normalize Each Label**
+4. Go to **Tools > Plugin Manager** and enable the plugin
+5. The plugin appears under **Tools > Normalize Each Label**
 
 ## Usage
 
@@ -31,14 +32,14 @@ Step 3 is tedious—I have to select each labeled region, run Effects > Volume a
 4. Run **Tools > Normalize Each Label**
 5. Export your files
 
-Each labeled region is normalized independently to -1 dB peak level, ensuring consistent volume across all regions with headroom for MP3 encoding.
+Each labeled region is normalized independently to -1 dB peak, ensuring consistent volume across all regions without clipping.
 
 ## How It Works
 
 The plugin:
 - Reads all labels from your label track
 - Iterates through each labeled region
-- Applies Audacity's Normalize effect (-1 dB peak) to each region independently
+- Applies Audacity's Normalize effect (-1 dB peak) to each region
 - Reports how many regions were processed
 
 This is equivalent to manually selecting each labeled region and running Normalize, but automated.
